@@ -5,13 +5,11 @@ terraform {
       version = "~> 5.92"
     }
   }
-
   required_version = ">= 1.2"
 }
 
-
 resource "aws_s3_bucket" "my_bucket" {
-  bucket = "Bhavya@123"  # Must be globally unique
+  bucket = "bhavya-123-bucket"  # Must be globally unique and lowercase
 
   tags = {
     Name        = "MyBucket"
@@ -19,9 +17,9 @@ resource "aws_s3_bucket" "my_bucket" {
   }
 }
 
-# Set ACL using a separate resource
 resource "aws_s3_bucket_acl" "bucket_acl" {
   bucket = aws_s3_bucket.my_bucket.id
   acl    = "private"
 }
+
 
