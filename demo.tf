@@ -9,13 +9,14 @@ terraform {
 }
 
 resource "aws_s3_bucket" "my_bucket" {
-  bucket = "bhavya-123-bucket"  # Must be globally unique and lowercase
+  bucket = "nandu7568"  # Must be globally unique and lowercase
 
   tags = {
     Name        = "MyBucket"
     Environment = "Dev"
   }
 }
+
 
 
 
